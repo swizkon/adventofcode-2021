@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode.Application
@@ -12,48 +13,87 @@ namespace AdventOfCode.Application
             public int Aim { get; set; }
         }
 
+        class Move
+        {
+            public Direction Direction { get; set; }
+            public int Value { get; set; }
+        }
+
+        enum Direction
+        {
+            Forward,
+            Up,
+            Down
+        }
+
         public static int FirstSolution(string[] input)
         {
-            var horizontal = input
-                .Where(x => x.StartsWith("forward "))
-                .Select(x => Convert.ToInt32(x.Substring("forward ".Length)))
-                .Sum();
+            var moves = ParseMoves(input).ToList();
+            
+            var horizontal = moves.Where(m => m.Direction == Direction.Forward).Sum(m => m.Value);
 
-            var depth = input
-                            .Where(x => x.StartsWith("up "))
-                            .Select(x => -Convert.ToInt32(x.Substring("up ".Length)))
-                            .Sum()
-                        + input
-                            .Where(x => x.StartsWith("down "))
-                            .Select(x => Convert.ToInt32(x.Substring("down ".Length)))
-                            .Sum();
-
+            var depth = moves.Where(m => m.Direction == Direction.Down).Sum(m => m.Value)
+                        - moves.Where(m => m.Direction == Direction.Up).Sum(m => m.Value);
             return horizontal * depth;
         }
 
         public static int SecondSolution(string[] input)
         {
             var state = new State();
-            foreach (var s in input)
+
+            var moves = ParseMoves(input).ToList();
+            foreach (var move in moves)
             {
-                if (s.StartsWith("up "))
+                switch (move.Direction)
                 {
-                    state.Aim -= Convert.ToInt32(s.Substring("up ".Length));
-                }
-
-                if (s.StartsWith("down "))
-                {
-                    state.Aim += Convert.ToInt32(s.Substring("down ".Length));
-                }
-
-                if (s.StartsWith("forward "))
-                {
-                    state.Horizontal += Convert.ToInt32(s.Substring("forward ".Length));
-                    state.Depth += state.Aim * Convert.ToInt32(s.Substring("forward ".Length));
+                    case Direction.Up:
+                        state.Aim -= move.Value;
+                        break;
+                    case Direction.Down:
+                        state.Aim += move.Value;
+                        break;
+                    case Direction.Forward:
+                        state.Horizontal += move.Value;
+                        state.Depth += state.Aim * move.Value;
+                        break;
                 }
             }
 
             return state.Horizontal * state.Depth;
+        }
+
+        private static IEnumerable<Move> ParseMoves(IEnumerable<string> input)
+        {
+            foreach (var s in input)
+            {
+                var val = Convert.ToInt32(s.Substring(s.IndexOf(" ") + 1));
+                if (s.StartsWith("up "))
+                {
+                    yield return new Move
+                    {
+                        Direction = Direction.Up,
+                        Value = val
+                    };
+                }
+
+                if (s.StartsWith("down "))
+                {
+                    yield return new Move
+                    {
+                        Direction = Direction.Down,
+                        Value = val
+                    };
+                }
+
+                if (s.StartsWith("forward "))
+                {
+                    yield return new Move
+                    {
+                        Direction = Direction.Forward,
+                        Value = val
+                    };
+                }
+            }
         }
     }
 }
