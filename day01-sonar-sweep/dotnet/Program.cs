@@ -19,12 +19,19 @@ namespace AdventOfCode
             Console.WriteLine(SonarSweep.SecondSolution(input));
             */
 
+            /*
             var input02 = InputReader.GetInput(Environment.CurrentDirectory, "input-day02.txt");
             Console.WriteLine("Day 2");
             Console.WriteLine("FirstSolution");
             Console.WriteLine(Dive.FirstSolution(input02));
             Console.WriteLine("SecondSolution");
             Console.WriteLine(Dive.SecondSolution(input02));
+            */
+
+            var input03 = InputReader.GetInput(Environment.CurrentDirectory, "input-day03.txt");
+            Console.WriteLine("Day 3");
+            Console.WriteLine("FirstSolution");
+            Console.WriteLine(BinaryDiagnostic.FirstSolution(input03));
         }
     }
 }
