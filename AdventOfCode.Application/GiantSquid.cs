@@ -3,12 +3,16 @@ using System.Linq;
 
 namespace AdventOfCode.Application
 {
-    // https://adventofcode.com/2021/day/3
 
-    public static class BinaryDiagnostic
+    // https://adventofcode.com/2021/day/4
+
+    public static class GiantSquid
     {
-        public static int GetPowerConsumption(string[] input)
+        public static int GetWinningBoard(string[] input)
         {
+            var numberSequence = input.First().Split(',');
+
+
             var values = input.GroupBy(s => s.Length)
                 .Single()
                 .ToList();
@@ -29,7 +33,7 @@ namespace AdventOfCode.Application
 
             var gammaRate = ReadBinaryStringToInt(new string(bits.Values.Select(v => v >= 0 ? '1' : '0').ToArray()));
             var epsilonRate = ReadBinaryStringToInt(new string(bits.Values.Select(v => v < 0 ? '1' : '0').ToArray()));
-            
+
             return gammaRate * epsilonRate;
         }
 
@@ -93,7 +97,7 @@ namespace AdventOfCode.Application
 
             return binary
                 .Reverse()
-                .Select(delegate(char c, int i)
+                .Select(delegate (char c, int i)
                 {
                     var on = c == '1';
                     return on ? values[i] : 0;
@@ -101,8 +105,4 @@ namespace AdventOfCode.Application
                 .Sum();
         }
     }
-
-
-
-
 }

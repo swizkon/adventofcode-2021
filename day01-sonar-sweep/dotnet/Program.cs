@@ -13,8 +13,8 @@ namespace AdventOfCode
             /*
             var input = InputReader.GetInput(Environment.CurrentDirectory, "input-day02.txt");
             Console.WriteLine("Day 1");
-            Console.WriteLine("FirstSolution");
-            Console.WriteLine(SonarSweep.FirstSolution(input));
+            Console.WriteLine("GetPowerConsumption");
+            Console.WriteLine(SonarSweep.GetPowerConsumption(input));
             Console.WriteLine("SecondSolution");
             Console.WriteLine(SonarSweep.SecondSolution(input));
             */
@@ -22,16 +22,21 @@ namespace AdventOfCode
             /*
             var input02 = InputReader.GetInput(Environment.CurrentDirectory, "input-day02.txt");
             Console.WriteLine("Day 2");
-            Console.WriteLine("FirstSolution");
-            Console.WriteLine(Dive.FirstSolution(input02));
+            Console.WriteLine("GetPowerConsumption");
+            Console.WriteLine(Dive.GetPowerConsumption(input02));
             Console.WriteLine("SecondSolution");
             Console.WriteLine(Dive.SecondSolution(input02));
             */
 
+            /*
             var input03 = InputReader.GetInput(Environment.CurrentDirectory, "input-day03.txt");
             Console.WriteLine("Day 3");
-            Console.WriteLine("FirstSolution");
-            Console.WriteLine(BinaryDiagnostic.FirstSolution(input03));
+            Console.WriteLine("GetPowerConsumption");
+            Console.WriteLine(BinaryDiagnostic.GetPowerConsumption(input03));
+
+            Console.WriteLine("GetLifeSupportRating");
+            Console.WriteLine(BinaryDiagnostic.GetLifeSupportRating(input03));
+            */
         }
     }
 }

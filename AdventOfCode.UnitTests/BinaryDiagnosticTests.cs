@@ -8,15 +8,25 @@ namespace AdventOfCode.UnitTests
     public class BinaryDiagnosticTests
     {
         [Fact]
-        public void WhenGettingTestDaTa_ITDoesCorrectParsing()
+        public void It_calculates_correct_power_consumption()
         {
             // Act
-            var result = BinaryDiagnostic.FirstSolution(TestData);
+            var result = BinaryDiagnostic.GetPowerConsumption(TestData);
 
             // Assert
             result.Should().Be(198);
         }
-        
+
+        [Fact]
+        public void It_calculates_correct_life_support_rating()
+        {
+            // Act
+            var result = BinaryDiagnostic.GetLifeSupportRating(TestData);
+
+            // Assert
+            result.Should().Be(230);
+        }
+
         private string[] TestData => new[]
         {
             "00100",
