@@ -29,7 +29,7 @@ namespace AdventOfCode.Application
 
             var gammaRate = ReadBinaryStringToInt(new string(bits.Values.Select(v => v >= 0 ? '1' : '0').ToArray()));
             var epsilonRate = ReadBinaryStringToInt(new string(bits.Values.Select(v => v < 0 ? '1' : '0').ToArray()));
-            
+
             return gammaRate * epsilonRate;
         }
 
@@ -39,7 +39,8 @@ namespace AdventOfCode.Application
                 .Single()
                 .ToList();
 
-            var oxygenGeneratorRating = ReadBinaryStringToInt(GetOxygenGeneratorRating(values, 0, values.First().Length));
+            var oxygenGeneratorRating =
+                ReadBinaryStringToInt(GetOxygenGeneratorRating(values, 0, values.First().Length));
 
 
             var co2ScrubberRating = GetCo2ScrubberRating(values, 0, values.First().Length);
@@ -101,8 +102,4 @@ namespace AdventOfCode.Application
                 .Sum();
         }
     }
-
-
-
-
 }
