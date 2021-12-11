@@ -21,8 +21,11 @@ def _day01_a():
 def _day06_a():
     input = _read_file_as_string('day06')
 
-    print('LanternFish.count_fishes')
-    print(LanternFish.count_fishes(input))
+    print('LanternFish.count_fishes for 80 days')
+    print(LanternFish.count_fishes(input, 80))
+    
+    print('LanternFish.count_fishes for 256 days')
+    print(LanternFish.count_fishes(input, 256))
 
 
 def _read_file_as_string(day):
