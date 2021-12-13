@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using AdventOfCode.Application;
+using AdventOfCode.Application.TheTreacheryOfWhales;
 using DotNetHelpers;
 
 namespace AdventOfCode
@@ -37,6 +39,12 @@ namespace AdventOfCode
             Console.WriteLine("GetLifeSupportRating");
             Console.WriteLine(BinaryDiagnostic.GetLifeSupportRating(input03));
             */
+
+
+            var input07 = InputReader.GetInput(Environment.CurrentDirectory, "input-day07.txt");
+            Console.WriteLine("Day 7");
+            Console.WriteLine("CalculateCheapestPosition");
+            Console.WriteLine(CrabAligner.CalculateCheapestPosition(input07.First()));
         }
     }
 }
