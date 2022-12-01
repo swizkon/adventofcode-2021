@@ -5,8 +5,8 @@ import day06.LanternFish as LanternFish
 def main():
     print("main")
 
-    # _day01_a()
-    _day06_a()
+    _day01_a()
+    # _day06_a()
 
 
 def _day01_a():

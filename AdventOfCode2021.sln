@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonarSweep", "day01-sonar-sweep\dotnet\SonarSweep.csproj", "{A387C7D7-955B-4371-93E5-E1CEB05A7EB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetHelpers", "DotNetHelpers\DotNetHelpers.csproj", "{BB382976-1223-4E29-BA39-1C44494C6C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelpers", "DotNetHelpers\DotNetHelpers.csproj", "{BB382976-1223-4E29-BA39-1C44494C6C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Application", "AdventOfCode.Application\AdventOfCode.Application.csproj", "{88DF9851-B503-4E30-A742-D7F742EC23F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.Application", "AdventOfCode.Application\AdventOfCode.Application.csproj", "{88DF9851-B503-4E30-A742-D7F742EC23F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.UnitTests", "AdventOfCode.UnitTests\AdventOfCode.UnitTests.csproj", "{6307316A-4A08-4889-B924-68D9624184D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.UnitTests", "AdventOfCode.UnitTests\AdventOfCode.UnitTests.csproj", "{6307316A-4A08-4889-B924-68D9624184D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2022Console", "AoC2022Console\AoC2022Console.csproj", "{C091F480-718F-490C-AA51-361D52E99CEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6307316A-4A08-4889-B924-68D9624184D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6307316A-4A08-4889-B924-68D9624184D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6307316A-4A08-4889-B924-68D9624184D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C091F480-718F-490C-AA51-361D52E99CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C091F480-718F-490C-AA51-361D52E99CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C091F480-718F-490C-AA51-361D52E99CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C091F480-718F-490C-AA51-361D52E99CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
