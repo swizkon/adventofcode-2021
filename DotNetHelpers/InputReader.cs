@@ -5,11 +5,20 @@ namespace DotNetHelpers
 {
     public class InputReader
     {
-        public static string[] GetInput(string path, string fileName = "input.txt")
+        public static string[] GetInput(string path, string folderName = null, string fileName = "input.txt")
         {
             if (path == null)
             {
                 return new List<string>().ToArray();
+            }
+
+            if (!string.IsNullOrWhiteSpace(folderName))
+            {
+                var filePath2 = Path.Combine(path, folderName, fileName);
+                if (File.Exists(filePath2))
+                {
+                    return File.ReadAllLines(filePath2);
+                }
             }
 
             var filePath = Path.Combine(path, fileName);
@@ -20,7 +29,7 @@ namespace DotNetHelpers
             }
 
             var folder = new DirectoryInfo(path);
-            return GetInput(folder.Parent?.FullName, fileName);
+            return GetInput(folder.Parent?.FullName, folderName: folderName, fileName: fileName); 
         }
 
         public static string GetInputRaw(string path, string folderName = null, string fileName = "input.txt")

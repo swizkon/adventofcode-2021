@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Application\AdventOfCode.Application.csproj" />
     <ProjectReference Include="..\DotNetHelpers\DotNetHelpers.csproj" />
   </ItemGroup>
 
