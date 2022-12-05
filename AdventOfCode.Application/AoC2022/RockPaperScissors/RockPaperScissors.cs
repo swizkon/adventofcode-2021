@@ -9,7 +9,6 @@ namespace AdventOfCode.Application.AoC2022.RockPaperScissors
         {
             public ShapeSelection Shapes { get; set; }
             public Outcome Outcome { get; set; }
-
             public int Score { get; set; }
         }
 
@@ -96,17 +95,6 @@ namespace AdventOfCode.Application.AoC2022.RockPaperScissors
                     MyShape = myShape
                 };
             }
-
-            //return from s in input
-            //    let my = s[2]
-            //    let myShape = my == 'X' ? Shape.Rock
-            //        : my == 'Y' ? Shape.Paper
-            //        : Shape.Scissors
-            //    select new ShapeSelection
-            //    {
-            //        OpponentShape = oppMove,
-            //        MyShape = myShape
-            //    };
         }
 
         public static List<ShapeSelection> ParseInput(string[] input)

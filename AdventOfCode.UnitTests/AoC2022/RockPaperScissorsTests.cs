@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using AdventOfCode.Application;
 using AdventOfCode.Application.AoC2022.RockPaperScissors;
 using FluentAssertions;
 using Xunit;
